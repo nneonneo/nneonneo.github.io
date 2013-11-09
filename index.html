@@ -11,13 +11,10 @@ body,td,th {
 }
 body {
 	background-color: #999;
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
+	margin: 0px;
 	background-image: url(images/shattereddark.png);
 }
-hr {
+hr.namesep {
   border-top: 2px dotted #fff;
   border-style: none none dotted; 
   color: #fff;
@@ -49,7 +46,51 @@ hr {
 .headshotimg {
 	border: 1px solid #FFF;
 }
+
+#teaser {
+  position: relative;
+  padding: 0px;
+}
+#teaserimg {
+  z-index: 1;
+}
+#teaseroverlay {
+  z-index: 2;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
 </style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="fadeslideshow.js"></script>
+<script type="text/javascript">
+
+var show=new fadeSlideShow({
+	wrapperid: "teaserimg",
+	dimensions: [900, 500],
+	imagearray: [
+	  ["teaser/ab1.jpg", "Projects/AcousticBarcodes", "", "Acoustic Barcodes"],
+	  ["teaser/ab2.jpg", "Projects/AcousticBarcodes", "", "Acoustic Barcodes"],
+	  ["teaser/ab3b.jpg", "Projects/AcousticBarcodes", "", "Acoustic Barcodes"],
+	  ["teaser/fs1b.jpg", "Projects/FingerSense", "", "FingerSense"],
+	  ["teaser/fs2.jpg", "Projects/FingerSense", "", "FingerSense"],
+	  ["teaser/fs3.jpg", "Projects/FingerSense", "", "FingerSense"],
+	  ["teaser/lumi1.jpg", "Projects/LumiTrack", "", "LumiTrack"],
+	  ["teaser/lumi2.jpg", "Projects/LumiTrack", "", "LumiTrack"],
+	  ["teaser/lumi3.jpg", "Projects/LumiTrack", "", "LumiTrack"],
+	  ["teaser/lumi4.jpg", "Projects/LumiTrack", "", "LumiTrack"],
+	  ["teaser/lumi5.jpg", "Projects/LumiTrack", "", "LumiTrack"],
+	  ["teaser/wk_kitchen.jpg", "Projects/WorldKit", "", "WorldKit"],
+	  ["teaser/wk_light.jpg", "Projects/WorldKit", "", "WorldKit"],
+	],
+	displaymode: {type:'auto', pause:2500, cycles:0, wraparound:false},
+	persist: false, //remember last viewed slide and recall within same session?
+	fadeduration: 500, //transition duration (milliseconds)
+	descreveal: "none",
+	togglerid: ""
+})
+
+</script>
 </head>
 
 <body>
@@ -58,10 +99,18 @@ hr {
     <td height="30" style="background-image:url(images/greentop.jpg)">&nbsp;</td>
   </tr>
   <tr>
-    <td height="400" valign="bottom" style="background-image:url(images/s4.jpg); padding:0px 0px 40px 40px"><div class="bigname">robert xiao</div>
-      <hr />
-      <div class="namesubtext">I combine computer science, mathematics, and <br />
-    electronics to create novel interactive experiences</div></td>
+    <td valign="top">
+      <div id="teaser">
+        <div id="teaserimg"></div>
+        <div id="teaseroverlay">
+          <div class="bigname">robert xiao</div>
+            <hr class="namesep" />
+            <div class="namesubtext">I combine computer science, mathematics, and <br />
+          electronics to create novel interactive experiences.</div>
+          </div>
+        </div>
+      </div>
+    </td>
   </tr>
   <tr>
     <td height="11"  style="background-image:url(images/greenbottom.jpg)"></td>
@@ -73,12 +122,12 @@ hr {
           <td valign="top"><p class="bodytext">I am a third year Ph.D. student. sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
             <p>&nbsp;</p>
             <hr />
-            <p class="bodytext"><img src="images/triangle.png" alt="" width="10" height="10" style="vertical-align:middle;" /> Download CV</p>
-          <p class="bodytext"><img src="images/triangle.png" width="10" height="10" style="vertical-align:middle;" /> info@robert.com</p></td>
+            <p class="bodytext"><img src="images/triangle.png" alt="" width="10" height="10" style="vertical-align:middle;" /> <a href="pubs/RobertXiaoCV.pdf">Download CV</a></p>
+          <p class="bodytext"><img src="images/triangle.png" width="10" height="10" style="vertical-align:middle;" /> <a href="mailto:brx@cs.cmu.edu">brx@cs.cmu.edu</a></p></td>
           <td width="220"><img src="images/headshot.jpg" alt="headshot" width="220" height="220" class="headshotimg" /></td>
         </tr>
       </table>
-    <p class="bodytext">© Robert Xiao    </p></td>
+    <p class="bodytext">© Robert Xiao, 2013</p></td>
   </tr>
 </table>
 </body>
