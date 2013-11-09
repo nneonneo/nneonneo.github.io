@@ -1,20 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="UTF-8">
 <title>Robert Xiao</title>
 <style type="text/css">
-body,td,th {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 11px;
-	color: #F63;
-}
 body {
 	background-color: #999;
 	margin: 0px;
-	background-image: url(images/shattereddark.png);
+	padding: 0px;
+
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	color: #fff;
 }
-hr.namesep {
+#wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+img.bgimg {
+  display: block;
+}
+
+hr {
   border-top: 2px dotted #fff;
   border-style: none none dotted; 
   color: #fff;
@@ -22,6 +29,7 @@ hr.namesep {
   width:50%;
   margin-left: 0px;
 }
+
 .bigname {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 100px;
@@ -43,9 +51,6 @@ hr.namesep {
 	font-variant: normal;
 	color: #F36;
 }
-.headshotimg {
-	border: 1px solid #FFF;
-}
 
 #teaser {
   position: relative;
@@ -60,6 +65,49 @@ hr.namesep {
   bottom: 40px;
   left: 40px;
 }
+
+#aboutme {
+  float: left;
+  width: 500px;
+  margin: 40px;
+}
+#aboutimg {
+  float: right;
+	border: 1px solid #FFF;
+  margin: 40px;
+}
+#aboutimg img {
+  display: block;
+}
+.linkbullet {
+  display: inline-block;
+  background-image: url(images/triangle.png);
+  width: 10px;
+  height: 10px;
+  vertical-align:middle;
+  margin-right: 3px;
+}
+.navlink {
+  color: #fff;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+.navlink:hover {
+  color: #ccc;
+  border-bottom: 1px dotted #fff;
+  text-decoration: none;
+}
+.deflink {
+  color: #fff;
+  text-decoration: none;
+}
+.deflink:hover {
+  border-bottom: 1px dotted #fff;
+}
+
+#copyright {
+  text-align: center;
+}
 </style>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" src="fadeslideshow.js"></script>
@@ -69,21 +117,25 @@ var show=new fadeSlideShow({
 	wrapperid: "teaserimg",
 	dimensions: [900, 500],
 	imagearray: [
-	  ["teaser/ab1.jpg", "Projects/AcousticBarcodes", "", "Acoustic Barcodes"],
-	  ["teaser/ab2.jpg", "Projects/AcousticBarcodes", "", "Acoustic Barcodes"],
-	  ["teaser/ab3b.jpg", "Projects/AcousticBarcodes", "", "Acoustic Barcodes"],
-	  ["teaser/fs1b.jpg", "Projects/FingerSense", "", "FingerSense"],
-	  ["teaser/fs2.jpg", "Projects/FingerSense", "", "FingerSense"],
-	  ["teaser/fs3.jpg", "Projects/FingerSense", "", "FingerSense"],
-	  ["teaser/lumi1.jpg", "Projects/LumiTrack", "", "LumiTrack"],
-	  ["teaser/lumi2.jpg", "Projects/LumiTrack", "", "LumiTrack"],
-	  ["teaser/lumi3.jpg", "Projects/LumiTrack", "", "LumiTrack"],
-	  ["teaser/lumi4.jpg", "Projects/LumiTrack", "", "LumiTrack"],
-	  ["teaser/lumi5.jpg", "Projects/LumiTrack", "", "LumiTrack"],
-	  ["teaser/wk_kitchen.jpg", "Projects/WorldKit", "", "WorldKit"],
-	  ["teaser/wk_light.jpg", "Projects/WorldKit", "", "WorldKit"],
+	  // Projects/AcousticBarcodes
+	  ["teaser/ab1.jpg", "", "", "Acoustic Barcodes"],
+	  ["teaser/ab2.jpg", "", "", "Acoustic Barcodes"],
+	  ["teaser/ab3b.jpg", "", "", "Acoustic Barcodes"],
+	  // Projects/FingerSense
+	  ["teaser/fs1b.jpg", "", "", "FingerSense"],
+	  ["teaser/fs2.jpg", "", "", "FingerSense"],
+	  ["teaser/fs3.jpg", "", "", "FingerSense"],
+	  // Projects/LumiTrack
+	  ["teaser/lumi1.jpg", "", "", "LumiTrack"],
+	  ["teaser/lumi2.jpg", "", "", "LumiTrack"],
+	  ["teaser/lumi3.jpg", "", "", "LumiTrack"],
+	  ["teaser/lumi4.jpg", "", "", "LumiTrack"],
+	  ["teaser/lumi5.jpg", "", "", "LumiTrack"],
+	  // Projects/WorldKit
+	  ["teaser/wk_kitchen.jpg", "", "", "WorldKit"],
+	  ["teaser/wk_light.jpg", "", "", "WorldKit"],
 	],
-	displaymode: {type:'auto', pause:2500, cycles:0, wraparound:false},
+	displaymode: {type:'auto', pause:6000, cycles:0, wraparound:false, randomize:true},
 	persist: false, //remember last viewed slide and recall within same session?
 	fadeduration: 500, //transition duration (milliseconds)
 	descreveal: "none",
@@ -93,42 +145,44 @@ var show=new fadeSlideShow({
 </script>
 </head>
 
-<body>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="30" style="background-image:url(images/greentop.jpg)">&nbsp;</td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <div id="teaser">
-        <div id="teaserimg"></div>
-        <div id="teaseroverlay">
-          <div class="bigname">robert xiao</div>
-            <hr class="namesep" />
-            <div class="namesubtext">I combine computer science, mathematics, and <br />
-          electronics to create novel interactive experiences.</div>
-          </div>
-        </div>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td height="11"  style="background-image:url(images/greenbottom.jpg)"></td>
-  </tr>
-  <tr>
-    <td align="center"  style="background-image:url(images/noisy_grid.png)">
-      <table width="100%" border="0" cellpadding="40" cellspacing="0">
-        <tr>
-          <td valign="top"><p class="bodytext">I am a third year Ph.D. student. sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-            <p>&nbsp;</p>
-            <hr />
-            <p class="bodytext"><img src="images/triangle.png" alt="" width="10" height="10" style="vertical-align:middle;" /> <a href="pubs/RobertXiaoCV.pdf">Download CV</a></p>
-          <p class="bodytext"><img src="images/triangle.png" width="10" height="10" style="vertical-align:middle;" /> <a href="mailto:brx@cs.cmu.edu">brx@cs.cmu.edu</a></p></td>
-          <td width="220"><img src="images/headshot.jpg" alt="headshot" width="220" height="220" class="headshotimg" /></td>
-        </tr>
-      </table>
-    <p class="bodytext">© Robert Xiao, 2013</p></td>
-  </tr>
-</table>
+<body style="background-image: url(images/shattereddark.png)">
+<div id="wrapper">
+
+<div id="teasertop" style="background-image: url(images/greentop.jpg);">
+  <img class="bgimg" alt="" src="images/greentop.jpg">
+</div>
+
+<div id="teaser">
+  <div id="teaserimg"></div>
+  <div id="teaseroverlay">
+    <div class="bigname">robert xiao</div>
+    <hr class="namesep" />
+    <div class="namesubtext">I combine computer science, mathematics, and <br />
+  electronics to create novel interactive experiences.</div>
+  </div>
+</div>
+
+<div id="teaserbottom" style="background-image:url(images/greenbottom.jpg)">
+  <img class="bgimg" alt="" src="images/greenbottom.jpg">
+</div>
+
+<div id="content" style="background-image:url(images/noisy_grid.png)">
+  <div style="clear: both"></div>
+  <div class="contentwrapper">
+    <div id="aboutme">
+      <p class="bodytext">I am a third year Ph.D. student in the <a class="deflink" href="http://www.hcii.cmu.edu">Human-Computer Interaction Institute</a> at <a class="deflink" href="http://www.cmu.edu">Carnegie Mellon University</a>, advised by <a class="deflink" href="http://chrisharrison.net">Chris Harrison</a> and <a class="deflink" href="http://www.cs.cmu.edu/~hudson/">Scott Hudson</a>. I use my background in computer science and mathematics to craft novel interaction technologies, to further improve the computers we use everyday. These technologies range from <!-- link to FingerSense -->ways to improve mobile touchscreens, to novel <!-- link to Lumitrack -->motion tracking systems, and onwards to <!-- link to WorldKit -->on-world interfaces. I am a cofounder of the touchscreen technology startup <a class="deflink" href="http://qeexo.com">Qeexo</a>.</p>
+      <p class="bodytext">&nbsp;</p>
+      <hr />
+      <p class="bodytext"><span class="linkbullet"></span><a class="navlink" href="pubs/RobertXiaoCV.pdf">Download CV</a></p>
+      <p class="bodytext"><span class="linkbullet"></span><a class="navlink" href="mailto:brx@cs.cmu.edu">brx@cs.cmu.edu</a></p>
+    </div>
+    <div id="aboutimg"><img src="images/headshot.jpg" alt="headshot" width="220" height="220" /></div>
+  </div>
+  <div style="clear: both"></div>
+  <div id="copyright"><p class="bodytext">© Robert Xiao, 2013</p></div>
+  &nbsp;
+</div>
+
+</div>
 </body>
 </html>
